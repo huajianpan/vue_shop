@@ -65,6 +65,7 @@ export default {
       this.$refs.loginFormRef.resetFields()
     },
     login () {
+      // 登录前再对表单进行校验
       this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return
         const { data: res } = await this.$http.post('login', this.loginForm)
