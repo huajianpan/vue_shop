@@ -20,22 +20,13 @@ const routes = [
     path: '/home',
     component: Home,
     redirect: '/welcome',
-    children: [{
-      path: '/welcome',
-      component: Welcome
-    }, {
-      path: '/users',
-      component: Users
-    }, {
-      path: '/roles',
-      component: Roles
-    }, {
-      path: '/rights',
-      component: Rights
-    }, {
-      path: '/goods',
-      component: Goods
-    }]
+    children: [
+      { path: '/welcome', component: Welcome },
+      { path: '/users', component: Users },
+      { path: '/roles', component: Roles },
+      { path: '/rights', component: Rights },
+      { path: '/goods', component: Goods }
+    ]
   }
   // {
   //   path: '/about',
