@@ -86,6 +86,7 @@ export default {
       const { data: res } = await this.$http.get('menus')
       if (res.meta.status !== 200) return this.$message.error(res.meta.res)
       this.menulist = res.data
+      console.log(this.menulist)
     },
     // 菜单折叠展开
     toggleMenu () {

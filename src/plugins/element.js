@@ -5,9 +5,10 @@ import {
   Header, Aside, Main,
   Menu, MenuItem, Submenu,
   Breadcrumb, BreadcrumbItem, Card, Table, TableColumn, Row, Col,
-  Switch, Tooltip, Pagination, Dialog, MessageBox, Tag, Tree, Option, Select
+  Switch, Tooltip, Pagination, Dialog, MessageBox, Tag, Tree, Option, Select, Cascader
 } from 'element-ui'
 
+Vue.use(Cascader)
 Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)
