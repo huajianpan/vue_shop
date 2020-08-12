@@ -242,6 +242,7 @@ export default {
       // this.getRolesList()
 
       // 只重新渲染当前行，不会闭合,防止整个列表刷新
+      // 注意：如果直接把变量引用名称赋值给role，role就不会再指向scope.row的对象，从而在也不会影响到原数据，所以只对其属性值操作
       role.children = res.data
     },
     // 展示分配权限的对话框
