@@ -20,3 +20,14 @@ body,
 .el-cascader-menu__wrap{
   height: 100% !important;
 }
+/* 放入vue文件中不起作用是因为模板未编译找不到该类的组件，所以定义在全局中 */
+.el-step__title {
+  font-size: 13px ;
+}
+/* 隐藏横向滚动条 */
+.el-scrollbar__wrap{
+  overflow-x: hidden;
+}
+.ql-editor{
+  min-height: 300px;
+}

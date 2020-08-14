@@ -6,9 +6,14 @@ import {
   Menu, MenuItem, Submenu,
   Breadcrumb, BreadcrumbItem, Card, Table, TableColumn, Row, Col,
   Switch, Tooltip, Pagination, Dialog, MessageBox, Tag, Tree, Option, Select, Cascader,
-  Alert, Tabs, TabPane
+  Alert, Tabs, TabPane, Step, Steps, Checkbox, CheckboxGroup, Upload
 } from 'element-ui'
 
+Vue.use(Upload)
+Vue.use(CheckboxGroup)
+Vue.use(Checkbox)
+Vue.use(Step)
+Vue.use(Steps)
 Vue.use(Cascader)
 Vue.use(Button)
 Vue.use(Form)
