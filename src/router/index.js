@@ -1,18 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../components/Login.vue'
-import Home from '../components/Home.vue'
-import Welcome from '../components/Welcome.vue'
-import Users from '../components/user/Users.vue'
-import Roles from '../components/power/Roles.vue'
-import Rights from '../components/power/Rights.vue'
-import Cate from '../components/goods/Cate.vue'
-import AddGoods from '../components/goods/Add.vue'
-import Params from '../components/goods/Params.vue'
-import GoodsList from '../components/goods/List.vue'
-import EditGoods from '../components/goods/Edit.vue'
-import Order from '../components/order/Order.vue'
-import Report from '../components/report/Report.vue'
+const Login = () => import(/* webPackChunkName:"login-home-welcome */'../components/Login.vue')
+const Home = () => import(/* webPackChunkName:"login-home-welcome */'../components/Home.vue')
+const Welcome = () => import(/* webPackChunkName:"login-home-welcome */'../components/Welcome.vue')
+// import Login from '../components/Login.vue'
+// import Home from '../components/Home.vue'
+// import Welcome from '../components/Welcome.vue'
+
+const Users = () => import(/* webPackChunkName:"Users-Roles-Rights */'../components/user/Users.vue')
+const Roles = () => import(/* webPackChunkName:"Users-Roles-Rights */'../components/power/Roles.vue')
+const Rights = () => import(/* webPackChunkName:"Users-Roles-Rights */'../components/power/Rights.vue')
+// import Users from '../components/user/Users.vue'
+// import Roles from '../components/power/Roles.vue'
+// import Rights from '../components/power/Rights.vue'
+
+const Cate = () => import(/* webPackChunkName:"CAPGE */'../components/goods/Cate.vue')
+const AddGoods = () => import(/* webPackChunkName:"CAPGE */'../components/goods/Add.vue')
+const Params = () => import(/* webPackChunkName:"CAPGE */'../components/goods/Params.vue')
+const GoodsList = () => import(/* webPackChunkName:"CAPGE */'../components/goods/List.vue')
+const EditGoods = () => import(/* webPackChunkName:"CAPGE */'../components/goods/Edit.vue')
+// import Cate      from '../components/goods/Cate.vue'
+// import AddGoods  from '../components/goods/Add.vue'
+// import Params    from '../components/goods/Params.vue'
+// import GoodsList from '../components/goods/List.vue'
+// import EditGoods from '../components/goods/Edit.vue'
+
+// import Order from '../components/order/Order.vue'
+// import Report from '../components/report/Report.vue'
+const Order = () => import(/* webPackChunkName:"Order */'../components/order/Order.vue')
+const Report = () => import(/* webPackChunkName:"Report */'../components/report/Report.vue')
 
 Vue.use(VueRouter)
 
@@ -37,6 +53,7 @@ const routes = [
       { path: '/goods', component: GoodsList },
       { path: '/goods/add', component: AddGoods },
       { name: 'edit', path: '/goods/edit', component: EditGoods },
+      { path: '/orders', component: Order },
       { path: '/reports', component: Report }
     ]
   }

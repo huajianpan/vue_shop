@@ -14,6 +14,10 @@ import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 
+// 导入 加载条对应js，css
+import Nprogress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 import _ from 'lodash'
 
 import axios from 'axios'
@@ -22,8 +26,18 @@ Vue.use(VueQuillEditor)
 
 Vue.prototype.$http = axios
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+// request添加拦截器，显示加载条
 axios.interceptors.request.use(config => {
+  // 发送请求，显示加载条
+  Nprogress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token')
+  // 最后必须 return config
+  return config
+})
+// response添加拦截器，隐藏加载条
+axios.interceptors.response.use(config => {
+  // 收到服务响应，隐藏加载条
+  Nprogress.done()
   // 最后必须 return config
   return config
 })
