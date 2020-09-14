@@ -15,7 +15,7 @@ import VueQuillEditor from 'vue-quill-editor'
 // import 'quill/dist/quill.bubble.css' // for bubble theme
 
 // 导入 加载条对应js，css
-import Nprogress from 'nprogress'
+import NProgress from 'nprogress'
 // import 'nprogress/nprogress.css'
 
 import _ from 'lodash'
@@ -25,11 +25,12 @@ import axios from 'axios'
 Vue.use(VueQuillEditor)
 
 Vue.prototype.$http = axios
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+// axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://ngrock.free.idcfengye.com/api/private/v1/' // 需要ngrock设置访问到本地端口8020，服务端端口由8888被改为8020
 // request添加拦截器，显示加载条
 axios.interceptors.request.use(config => {
   // 发送请求，显示加载条
-  Nprogress.start()
+  NProgress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 最后必须 return config
   return config
@@ -37,7 +38,7 @@ axios.interceptors.request.use(config => {
 // response添加拦截器，隐藏加载条
 axios.interceptors.response.use(config => {
   // 收到服务响应，隐藏加载条
-  Nprogress.done()
+  NProgress.done()
   // 最后必须 return config
   return config
 })

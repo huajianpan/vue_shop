@@ -12,7 +12,7 @@ module.exports = {
         axios: 'axios',
         lodash: '_',
         echarts: 'echarts',
-        nprogress: 'Nprogress',
+        nprogress: 'NProgress', // 右边为node包exports的变量名，左边为包名
         'vue-quill-editor': 'VueQuillEditor'
       })
       // 为html文本添加自定义参数
